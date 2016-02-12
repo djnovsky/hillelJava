@@ -2,7 +2,7 @@
  * Created by User on 12.02.2016.
  */
 public class IfOperator {
-    
+
     public static void main(String[] args) {
 
         int v1 = 5, v2 = 5;
