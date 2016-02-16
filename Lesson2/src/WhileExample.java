@@ -15,7 +15,7 @@ public class WhileExample {
 
         for (i = 2; i >=0; i--);
         {
-            System.out.println(array[i]);
+           System.out.println(array[i]);
         }
     }
 }
