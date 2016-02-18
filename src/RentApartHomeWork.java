@@ -1,7 +1,7 @@
 /**
  * Created by User on 12.02.2016.
  */
-public class RentApart {
+public class RentApartHomeWork {
     public static void main(String[] args) {
         int rentDays = 12;
 
