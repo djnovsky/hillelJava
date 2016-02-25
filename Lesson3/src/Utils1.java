@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Created by User on 19.02.2016.
  */
-public class Utils {
+public class Utils1 {
     public static int[] getArrayFromConsole (){
         Scanner scanner = new Scanner(System.in);
 

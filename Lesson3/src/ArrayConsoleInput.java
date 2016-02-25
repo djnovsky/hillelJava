@@ -4,11 +4,11 @@
 public class ArrayConsoleInput {
     public static void main(String[] args) {
 
-        int[] array = Utils.getArrayFromConsole();
+        int[] array = Utils1.getArrayFromConsole();
 
         int sum = findTheSumOfAllElementsOfTheArray(array);
 
-        Utils.printArray(array);
+        Utils1.printArray(array);
 
         System.out.println("Sum is: "+sum);
     }

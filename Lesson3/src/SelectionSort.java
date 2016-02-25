@@ -19,7 +19,7 @@ public class SelectionSort {
             array[i] = array[minIndex];
             array[minIndex] = buf;
         }
-        Utils.printArray(array);
+        Utils1.printArray(array);
     }
 
 }
