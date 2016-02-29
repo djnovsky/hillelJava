@@ -7,34 +7,26 @@ import java.util.Scanner;
  */
 public class Triangle {
 
-    static int numberOfSides = 3;
+    private static int numberOfSides = 3;
 
-    static int perimeter;
+    private int triangleHigh;
+    private int triangleBase;
 
-    static int area;
-
-    public static void main(String[] args) {
-
-        triangleScanner();
-
-    }
-
-    public static void triangleScanner() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter triangle high:");
-        int triangleHigh = scanner.nextInt();
-        System.out.println("Please enter triangle base side:");
-        int triangleBase = scanner.nextInt();
-
-        areaOfTriangle(triangleHigh,triangleBase);
+    Triangle(int triangleHigh, int triangleBase){
+        this.triangleHigh = triangleHigh;
+        this.triangleBase = triangleBase;
     }
 
 
-    public static void areaOfTriangle(int triangleHigh, int triangleBase) {
+    public void areaOfTriangle() {
         double triangleArea = (triangleHigh*triangleBase)/2;
         System.out.println("Triangle area is: " + triangleArea);
 
 
+    }
+
+    public int getNumberOfSides(){
+        return numberOfSides;
     }
 
 }

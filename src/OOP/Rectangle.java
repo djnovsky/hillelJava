@@ -17,10 +17,10 @@ public class Rectangle {
         return width * height;
     }
 
-    public void changeSidesCount(){
-        sides = sides+1;
+//    public void changeSidesCount(){
+//        sides = sides+1;
 
         //нельзя менять статик (количество сторон принадлежит вем прямоугольниам)
     }
 
-}
+

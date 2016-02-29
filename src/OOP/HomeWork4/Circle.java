@@ -7,39 +7,26 @@ import java.util.Scanner;
  */
 public class Circle {
 
-    static double radius;
-    static double pi = 3.14;
+    private double radius;
+    private static double pi = 3.14;
 
-    public static void main(String[] args) {
-
-        getDiameterLenghtAndArea();
-
+    Circle(double radius) {
+        this.radius = radius;
     }
 
-    public static void getDiameterLenghtAndArea() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter circle radius: ");
-        double radius = scanner.nextInt();
 
-        circleDiameter(radius);
-
-        circleLenght(radius);
-
-        circleArea(radius);
-    }
-
-    private static void circleArea(double radius) {
-        double circleArea = pi*(Math.pow(radius,2));
+    public void circleArea() {
+        double circleArea = pi * (Math.pow(radius, 2));
         System.out.println("Circle area is: " + circleArea);
     }
 
-    private static void circleLenght(double radius) {
-        double circleLenght = 2*pi*radius;
-        System.out.println("Circle lenght is: " + circleLenght);
+    public void circleLength() {
+        double circleLength = 2 * pi * radius;
+        System.out.println("Circle length is: " + circleLength);
     }
 
-    private static void circleDiameter(double radius) {
-        double circleDiametrAmount = radius*2;
-        System.out.println("Circle diameter is: " + circleDiametrAmount);
+    public void circleDiameter() {
+        double circleDiameterAmount = radius * 2;
+        System.out.println("Circle diameter is: " + circleDiameterAmount);
     }
 }

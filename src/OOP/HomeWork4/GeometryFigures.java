@@ -1,34 +1,23 @@
 package OOP.HomeWork4;
 
-import java.util.Scanner;
-
 /**
  * Created by novsky on 25.02.2016.
  */
 public class GeometryFigures {
     public static void main(String[] args) {
-        System.out.println("Please enter your Figure:");
-        System.out.println("1 = Circle, 2 = Triangle, 3 = Rectangle");
-        Scanner scanner = new Scanner(System.in);
-        String choice = scanner.nextLine();
 
-        switch (choice){
-            case "1":
-                Circle.getDiameterLenghtAndArea();
-                break;
-            case "2":
-                Triangle.triangleScanner();
-                //System.out.println("Coming soon...");
-                break;
-            case "3":
-                RectangleTask.EnteringAreaAndPerimeterOfRectangle();
-                //System.out.println("Coming soon...");
-                break;
-            default:
-                System.out.println("Please enter right number");
-                break;
+        Circle circleExample = new Circle(12);
+        circleExample.circleArea();
+        circleExample.circleDiameter();
+        circleExample.circleLength();
 
-        }
-        System.out.println("You was marvellous, see you next time :)");
+        Triangle triangleExample = new Triangle(16, 21);
+        triangleExample.areaOfTriangle();
+        System.out.println("Triangle have " + triangleExample.getNumberOfSides() + " sides.");
+
+        Rectangle rectangleExample = new Rectangle(64, 240);
+        rectangleExample.sidesOfRectangle();
+        System.out.println("Rectangle have " + rectangleExample.getNumberOfSides() + " sides.");
+
     }
 }
