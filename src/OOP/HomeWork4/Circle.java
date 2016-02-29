@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Circle {
 
     private double radius;
-    private static double pi = 3.14;
+    private static double pi = Math.PI;
 
     Circle(double radius) {
         this.radius = radius;

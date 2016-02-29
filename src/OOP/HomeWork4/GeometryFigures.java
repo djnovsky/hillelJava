@@ -16,8 +16,10 @@ public class GeometryFigures {
         System.out.println("Triangle have " + triangleExample.getNumberOfSides() + " sides.");
 
         Rectangle rectangleExample = new Rectangle(64, 240);
-        rectangleExample.sidesOfRectangle();
+        System.out.println("Area of rectangle is: " + rectangleExample.calculateArea());
+        System.out.println("Perimeter of rectangle is: " + rectangleExample.calculatePerimeter());
         System.out.println("Rectangle have " + rectangleExample.getNumberOfSides() + " sides.");
+
 
     }
 }
