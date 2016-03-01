@@ -5,7 +5,7 @@ package OOP.HomeWork4;
  */
 public class Rectangle {
 
-    private static int numberOfSides = 4;
+    static final int NUMBER_OF_SIDES = 4;
 
     private int width;
     private int height;
@@ -22,7 +22,7 @@ public class Rectangle {
     public  int calculatePerimeter(){return (width+height)*2;}
 
     public int getNumberOfSides() {
-        return numberOfSides;
+        return NUMBER_OF_SIDES;
     }
 
 
