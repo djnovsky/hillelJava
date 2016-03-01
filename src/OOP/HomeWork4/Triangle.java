@@ -9,18 +9,22 @@ public class Triangle {
 
     private static int numberOfSides = 3;
 
-    private int triangleHigh;
-    private int triangleBase;
+    private int side1;
+    private int side2;
+    private int side3;
 
-    Triangle(int triangleHigh, int triangleBase){
-        this.triangleHigh = triangleHigh;
-        this.triangleBase = triangleBase;
-    }
+
+//    Triangle(int triangleHigh, int triangleBase){
+//        this.triangleHigh = triangleHigh;
+//        this.triangleBase = triangleBase;
+//    }
 
 
     public void areaOfTriangle() {
-        double triangleArea = (triangleHigh*triangleBase)/2;
-        System.out.println("Triangle area is: " + triangleArea);
+        int triangleHigh;
+        int triangleBase = side3;
+//        double triangleArea = (triangleHigh*triangleBase)/2;
+//        System.out.println("Triangle area is: " + triangleArea);
 
 
     }

@@ -11,9 +11,9 @@ public class GeometryFigures {
         circleExample.circleDiameter();
         circleExample.circleLength();
 
-        Triangle triangleExample = new Triangle(16, 21);
-        triangleExample.areaOfTriangle();
-        System.out.println("Triangle have " + triangleExample.getNumberOfSides() + " sides.");
+//        Triangle triangleExample = new Triangle(16, 21);
+//        triangleExample.areaOfTriangle();
+//        System.out.println("Triangle have " + triangleExample.getNumberOfSides() + " sides.");
 
         Rectangle rectangleExample = new Rectangle(64, 240);
         System.out.println("Area of rectangle is: " + rectangleExample.calculateArea());
