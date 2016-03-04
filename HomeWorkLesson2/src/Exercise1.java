@@ -6,10 +6,14 @@ public class Exercise1 {
     public static void main(String[] args) {
 
 
-        int step = 2;
-        for (int i = 1; i < 110; i+=step) {
-            System.out.println(i);
-
+        int count = 0;
+        for (int i = 1; i > 0; i += 2) {
+            if (count < 55) {
+                System.out.println(i);
+                count++;
+            } else {
+                break;
+            }
         }
     }
 }
