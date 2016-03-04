@@ -25,6 +25,14 @@ public class Rectangle {
         return NUMBER_OF_SIDES;
     }
 
+    public String toString(){
+        String result = "Rectangle (a = ";
+        result += width;
+        result += ", b = ";
+        result += height+")";
+        return result;
+    }
+
 
 
 

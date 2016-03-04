@@ -11,14 +11,17 @@ public class GeometryFigures {
         circleExample.circleDiameter();
         circleExample.circleLength();
 
-//        Triangle triangleExample = new Triangle(16, 21);
-//        triangleExample.areaOfTriangle();
-//        System.out.println("Triangle have " + triangleExample.getNumberOfSides() + " sides.");
+        Triangle triangleExample = new Triangle(12,16,21);
+        System.out.println("Triangle have " + triangleExample.getNUMBER_OF_SIDES() + " sides.");
+        System.out.println("It is "+triangleExample.toString());
+        triangleExample.areaOfTriangle(10);
 
-        Rectangle rectangleExample = new Rectangle(64, 240);
+        Rectangle rectangleExample = new Rectangle(12, 20);
         System.out.println("Area of rectangle is: " + rectangleExample.calculateArea());
         System.out.println("Perimeter of rectangle is: " + rectangleExample.calculatePerimeter());
         System.out.println("Rectangle have " + rectangleExample.getNumberOfSides() + " sides.");
+        System.out.println(rectangleExample.toString());
+        GetSidesOfRectangleFromAreaAndPerimeter.sidesOfRectangle(rectangleExample.calculatePerimeter(), rectangleExample.calculateArea());
 
 
     }
