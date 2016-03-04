@@ -8,8 +8,8 @@ public class RectangleExample {
 
 
         Rectangle firstRectangle = new Rectangle(3, 2);
-      firstRectangle.setHeight(2);
-       firstRectangle.setWidth(3);
+        firstRectangle.setHeight(2);
+        firstRectangle.setWidth(3);
         //firstRectangle.area = 6;
 
         firstRectangle.setColor("blue");
@@ -57,8 +57,8 @@ public class RectangleExample {
         System.out.println(firstRectangle);
 
         Rectangle anotherRectangle = new Rectangle(firstRectangle.getWidth(), firstRectangle.getWidth());
-//        anotherRectangle.width = firstRectangle.width;
-//        anotherRectangle.height = firstRectangle.height;
+        //anotherRectangle.width = firstRectangle.width;
+        //anotherRectangle.height = firstRectangle.height;
 
         System.out.println("Another Rectangle is: " + anotherRectangle.toString());
 
@@ -68,17 +68,17 @@ public class RectangleExample {
 
     }
 
-//    public static void anotherMethod() {
-//
-//        int i  = 10;
-//        System.out.println("ldfslf");
-//        anotherAnotherMethod();
-//    }
-//
-//    public static void anotherAnotherMethod() {
-//        Rectangle rectangle = null;
-//        rectangle.calculateArea();
-//    }
+        //public static void anotherMethod() {
+
+        //int i  = 10;
+        //System.out.println("ldfslf");
+        //anotherAnotherMethod();
+        //    }
+
+        //public static void anotherAnotherMethod() {
+        //Rectangle rectangle = null;
+        //rectangle.calculateArea();
+        //    }
 
     public static int calculateArea(int height, int width) {
         return height * width;
