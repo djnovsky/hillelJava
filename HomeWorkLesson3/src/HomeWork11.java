@@ -1,11 +1,9 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * Created by novsky on 22.02.2016.
  */
 public class HomeWork11 {
-//    String newWord = "";
     public static void main(String[] args) {
 
 
@@ -19,47 +17,42 @@ public class HomeWork11 {
 //    i18n l10n cat e6t m5r
 //
 //    PS: напишите функцию, которая сокращает слово, в основной функции используйте метод сплит, который поместит слова в массив и для каждого из них вызовет вашу функцию
-        String newWord = "";
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the word: ");
-        newWord = scanner.nextLine();
+        String newWord = scanner.nextLine();
 
 
+        String[] string = newWord.split(" ");
+        for (int i = 0; i < string.length; i++) {
+            if (string[i].length() > 5) {
+                changeThisWord(string, i);
+            } else {
 
-        if(newWord.length()<5){
-            System.out.println("Your word is too short for changing: " + newWord);;
-        } else {
-            String[] everyCommonWord = newWord.split(" ");
-            for (int i=0; i==everyCommonWord.length; i++) {
-                changingTheWord(newWord);
-                printArray(everyCommonWord);
             }
+
         }
-
+        printArray(string);
     }
 
-    public static void changingTheWord(String newWord) {
-        char firstChar = newWord.charAt(0);
-        char lastChar = newWord.charAt(newWord.length()-1);
-        int numberOfCharsInside = newWord.length()-2;
-        //System.out.println("Your word now is: "+firstChar+numberOfCharsInside+lastChar);
+    public static void changeThisWord(String[] string, int i) {
+        char firstChar = string[i].charAt(0);
+        char lastChar = string[i].charAt(string[i].length() - 1);
+        int numberOfCharsInside = (string[i].length() - 2);
+        string[i] = "" + firstChar + numberOfCharsInside + lastChar;
     }
 
-    public static void splittingWord(String newWord){
-        newWord.split(" ", 2);
-    }
-    public static void printArray (String[] array) {
-        System.out.print("Words: ");
-        for (int i=0; i <array.length; i++){
-            if (i == array.length -1)
+
+    public static void printArray(String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (i == array.length - 1)
                 System.out.println(array[i]);
             else
-                System.out.print(array[i] + ",");
+                System.out.print(array[i] + ", ");
         }
     }
 
-        }
+}
 
 
 
