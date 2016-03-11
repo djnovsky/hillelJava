@@ -1,27 +1,30 @@
 package OOP.HomeWork4;
 
+import java.util.Scanner;
+
 /**
  * Created by novsky on 11.03.2016.
  */
 public class Crypting2 {
     public static void main(String[] args) {
 
-
-        String cryptedString = "somebody wants to blow you up";
-        char[] key = {'G','g','1','5','1'};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Plese enter message to crypt: ");
+        String cryptedString = scanner.nextLine();
+        System.out.print("Plese enter keyword: ");
+        String keyString = scanner.nextLine();
+        char[] key = keyString.toCharArray();
         char[] result = encode(cryptedString, key);
-        System.out.println("Uncrypted String: " + cryptedString);
         String uncryptedString = decode(result,key);
         printArray(result);
-        System.out.println("Uncrypted String: " + uncryptedString);
 
 
     }
 
-    public static char[] encode(String pText, char[] pKey) {
-        char[] txt = pText.toCharArray();
-        char[] key = pKey;
-        char[] res = new char[pText.length()];
+    public static char[] encode(String cryptText, char[] charKey) {
+        char[] txt = cryptText.toCharArray();
+        char[] key = charKey;
+        char[] res = new char[cryptText.length()];
 
         for (int i = 0; i < txt.length; i++) {
             res[i] = (char) (txt[i] ^ key[i % key.length]);
@@ -30,12 +33,12 @@ public class Crypting2 {
         return res;
     }
 
-    public static String decode(char[] pText, char[] pKey) {
-        char[] res = new char[pText.length];
-        char[] key = pKey;
+    public static String decode(char[] cryptText, char[] charKey) {
+        char[] res = new char[cryptText.length];
+        char[] key = charKey;
 
-        for (int i = 0; i < pText.length; i++) {
-            res[i] = (char) (pText[i] ^ key[i % key.length]);
+        for (int i = 0; i < cryptText.length; i++) {
+            res[i] = (char) (cryptText[i] ^ key[i % key.length]);
         }
 
         return new String(res);
@@ -44,9 +47,6 @@ public class Crypting2 {
     public static void printArray(char[] array) {
         System.out.print("Crypted: ");
         for (int i = 0; i < array.length; i++) {
-            if (i == array.length - 1)
-                System.out.println(array[i]);
-            else
                 System.out.print(array[i]);
         }
 
