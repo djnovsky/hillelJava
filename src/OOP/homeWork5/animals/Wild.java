@@ -3,7 +3,7 @@ package OOP.homeWork5.animals;
 /**
  * Created by novsky on 11.03.2016.
  */
-public class Wild extends Animals {
+public class Wild extends Animal {
 
 
     @Override

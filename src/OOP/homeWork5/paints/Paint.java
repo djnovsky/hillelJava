@@ -3,13 +3,13 @@ package OOP.homeWork5.paints;
 /**
  * Created by novsky on 12.03.2016.
  */
-public abstract class Paints {
+public abstract class Paint {
 
     private String color;
 
     public abstract int consumption();
 
-    public Paints(String color){
+    public Paint(String color){
         this.color = color;
     }
 

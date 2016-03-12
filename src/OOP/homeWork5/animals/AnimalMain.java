@@ -3,7 +3,7 @@ package OOP.homeWork5.animals;
 /**
  * Created by novsky on 11.03.2016.
  */
-public class AnimalsMain {
+public class AnimalMain {
 
     public static void main(String[] args) {
         Dog bonya = new Dog("Bonya");

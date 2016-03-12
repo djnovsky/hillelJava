@@ -3,7 +3,7 @@ package OOP.homeWork5.paints;
 /**
  * Created by novsky on 12.03.2016.
  */
-public class RedPaint extends Paints {
+public class RedPaint extends Paint {
 
     public RedPaint(String color) {
         super(color);

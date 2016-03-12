@@ -3,7 +3,7 @@ package OOP.homeWork5.animals;
 /**
  * Created by novsky on 11.03.2016.
  */
-public class Animals {
+public abstract class Animal {
 
     private String id;
     private String age;
