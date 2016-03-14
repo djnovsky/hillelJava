@@ -1,13 +1,17 @@
 package OOP.homeWork5.shapes;
 
+import OOP.homeWork5.paints.YellowPaint;
+
 /**
  * Created by novsky on 14.03.2016.
  */
 public class Circle extends Figure{
     private int radius;
     final double pi = Math.PI;
-    private String color = "red";
-    private double paintConsumption = 1.1;
+
+    YellowPaint yellowPaint = new YellowPaint("yellow");
+
+
 
     public Circle(int radius){
         this.radius = radius;
@@ -40,25 +44,10 @@ public class Circle extends Figure{
         return super.toString() + "circle with radius "
                 + getRadius()
                 + " , and I'am "
-                + color + ". My area is " + area()
+                + yellowPaint.getColor() + ". My area is " + area()
                 + " and my circumference is " + perimeter()
-                + ". To paint me you'll need " + (paintConsumption*area())
+                + ". To paint me you'll need " + (yellowPaint.consumption()*area())
                 + " litres of paint.";
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public double getPaintConsumption() {
-        return paintConsumption;
-    }
-
-    public void setPaintConsumption(double paintConsumption) {
-        this.paintConsumption = paintConsumption;
-    }
 }
