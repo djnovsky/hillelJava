@@ -23,22 +23,22 @@ public abstract class Figure {
 
     public double consumption(String color, double area) {
         if (color.equals("yellow")) {
-            return area * 2.1;
+            return Math.round(area * 2.1);
         }
         if (color.equals("black")) {
-            return area * 1.6;
+            return Math.round(area * 1.6);
         }
         if (color.equals("blue")) {
-            return area * 1.4;
+            return Math.round(area * 1.4);
         }
         if (color.equals("red")) {
-            return area * 1.1;
+            return Math.round(area * 1.1);
         }
         if (color.equals("green")) {
-            return area * 0.9;
+            return Math.round(area * 0.9);
         }
         if (color.equals("grey")) {
-            return area * 0.2;
+            return Math.round(area * 0.2);
 
         }
         return 0;
