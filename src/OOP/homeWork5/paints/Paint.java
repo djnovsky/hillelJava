@@ -9,8 +9,6 @@ public abstract class Paint {
 
     public abstract double consumption();
 
-
-
     public String getColor() {
         return color;
     }
