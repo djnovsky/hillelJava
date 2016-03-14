@@ -1,5 +1,6 @@
 package OOP.homeWork5.shapes;
 
+import OOP.homeWork5.paints.Paint;
 import OOP.homeWork5.paints.YellowPaint;
 
 /**
@@ -8,10 +9,16 @@ import OOP.homeWork5.paints.YellowPaint;
 public class Circle extends Figure{
     private int radius;
     final double pi = Math.PI;
+    private Paint paint = new Paint("green") {
 
-    YellowPaint yellowPaint = new YellowPaint("yellow");
 
 
+
+        @Override
+        public int consumption() {
+            return (int) (paint.consumption()*area());
+        }
+    };
 
     public Circle(int radius){
         this.radius = radius;
@@ -44,9 +51,9 @@ public class Circle extends Figure{
         return super.toString() + "circle with radius "
                 + getRadius()
                 + " , and I'am "
-                + yellowPaint.getColor() + ". My area is " + area()
+                + paint.getColor() + ". My area is " + area()
                 + " and my circumference is " + perimeter()
-                + ". To paint me you'll need " + (yellowPaint.consumption()*area())
+                + ". To paint me you'll need " + (paint.consumption()*area())
                 + " litres of paint.";
     }
 
