@@ -41,7 +41,7 @@ public class Square extends Figure {
                 + ", and I'am "
                 + paint.getColor()+ ". My area is " + area()
                 + " and my perimeter is " + perimeter()
-                + ". To paint me you'll need " + (paint.consumption()*area())
+                + ". To paint me you'll need " + Math.round(paint.consumption()*area())
                 + " litres of paint.";
     }
 }
