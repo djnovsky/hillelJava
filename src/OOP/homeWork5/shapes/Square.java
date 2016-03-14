@@ -1,22 +1,19 @@
 package OOP.homeWork5.shapes;
 
+import OOP.homeWork5.paints.Paint;
+
 /**
  * Created by novsky on 14.03.2016.
  */
 public class Square extends Figure {
     private int side;
+    private Paint paint;
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Square(int side){
+    public Square(int side, Paint paint){
+        this.paint = paint;
         this.side = side;
     }
+
 
     @Override
     public double area() {
@@ -42,9 +39,9 @@ public class Square extends Figure {
     public String toString(){
         return super.toString() + "square with side " + getSide()
                 + ", and I'am "
-                + getColor()+ ". My area is " + area()
+                + paint.getColor()+ ". My area is " + area()
                 + " and my perimeter is " + perimeter()
-                + ". To paint me you'll need " + consumption(getColor(),area())
+                + ". To paint me you'll need " + (paint.consumption()*area())
                 + " litres of paint.";
     }
 }

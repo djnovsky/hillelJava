@@ -5,13 +5,21 @@ package OOP.homeWork5.paints;
  */
 public class BlackPaint extends Paint {
 
-    public BlackPaint(String color) {
-        super(color);
+    private String color = "black";
+
+    @Override
+    public String getColor() {
+        return color;
     }
 
     @Override
-    public int consumption() {
-        int consuption = 1*2;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public double consumption() {
+        double consuption = 1.2;
         return consuption;
     }
 }

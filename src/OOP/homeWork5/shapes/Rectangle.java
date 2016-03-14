@@ -1,5 +1,7 @@
 package OOP.homeWork5.shapes;
 
+import OOP.homeWork5.paints.Paint;
+
 /**
  * Created by novsky on 14.03.2016.
  */
@@ -8,9 +10,12 @@ public class Rectangle extends Figure {
     private int height;
     private int width;
 
-    public Rectangle(int height, int width) {
+    private Paint paint;
+
+    public Rectangle(int height, int width,Paint paint) {
         this.height = height;
         this.width = width;
+        this.paint = paint;
     }
 
     @Override
@@ -45,9 +50,9 @@ public class Rectangle extends Figure {
                 + getWidth() + " and height "
                 + getHeight()
                 + ", and I'am "
-                + getColor() + ". My area is " + area()
+                + paint.getColor() + ". My area is " + area()
                 + " and my perimeter is " + perimeter()
-                + ". To paint me you'll need " + consumption(getColor(), area())
+                + ". To paint me you'll need " + (paint.consumption()*area())
                 + " litres of paint.";
     }
 }

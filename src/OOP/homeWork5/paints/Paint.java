@@ -7,11 +7,8 @@ public abstract class Paint {
 
     private String color;
 
-    public abstract int consumption();
+    public abstract double consumption();
 
-    public Paint(String color){
-        this.color = color;
-    }
 
 
     public String getColor() {

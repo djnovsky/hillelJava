@@ -1,5 +1,7 @@
 package OOP.homeWork5.shapes;
 
+import OOP.homeWork5.paints.Paint;
+
 /**
  * Created by novsky on 14.03.2016.
  */
@@ -8,11 +10,13 @@ public class Parallelogram extends Figure {
     private int side1;
     private int side2;
     private int height;
+    private Paint paint;
 
 
-    public Parallelogram(int side1,int side2){
+    public Parallelogram(int side1,int side2, Paint paint){
         this.side1 = side1;
         this.side2 = side2;
+        this.paint = paint;
     }
 
     @Override
@@ -56,9 +60,9 @@ public class Parallelogram extends Figure {
                 + getSide2()+ " and height "
                 + getHeight()
                 + ", and I'am "
-                + getColor()+ ". My area is " + area()
+                + paint.getColor()+ ". My area is " + area()
                 + " and my perimeter is " + perimeter()
-                + ". To paint me you'll need " + consumption(getColor(),area())
+                + ". To paint me you'll need " + (paint.consumption()*area())
                 + " litres of paint.";
     }
 }

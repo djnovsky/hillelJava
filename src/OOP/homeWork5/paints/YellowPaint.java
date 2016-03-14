@@ -6,13 +6,21 @@ package OOP.homeWork5.paints;
 public class YellowPaint extends Paint {
 
 
-    public YellowPaint(String color) {
-        super(color);
+    private String color = "yellow";
+
+    @Override
+    public String getColor() {
+        return color;
     }
 
     @Override
-    public int consumption() {
-        int consuption = 1*3;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public double consumption() {
+        double consuption = 1.3;
         return consuption;
     }
 }

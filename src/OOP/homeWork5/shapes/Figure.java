@@ -8,19 +8,22 @@ import java.util.Random;
  */
 public abstract class Figure {
 
-    String color;
+    //String color;
+
+
 
     public abstract double area();
     public abstract double perimeter();
 
 
 
-    public String colorMyShape(){
+
+   /* public String colorMyShape(){
         String[] colors = {"yellow", "green", "blue", "black", "red","grey"};
         String color = colors[new Random().nextInt(colors.length)];
         return color;
-    }
-
+    }*/
+/*
     public double consumption(String color, double area) {
         if (color.equals("yellow")) {
             return Math.round(area * 2.1);
@@ -42,17 +45,17 @@ public abstract class Figure {
 
         }
         return 0;
-    }
+    }*/
 
     public String toString(){
         return "Hello, I am geometric figure ";
     }
 
-    public String getColor() {
+    /*public String getColor() {
         return color;
     }
 
     public void setColor(String color) {
         this.color = color;
-    }
+    }*/
 }

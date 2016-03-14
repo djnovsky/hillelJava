@@ -9,18 +9,10 @@ import OOP.homeWork5.paints.YellowPaint;
 public class Circle extends Figure{
     private int radius;
     final double pi = Math.PI;
-    private Paint paint = new Paint("green") {
+    private Paint paint;
 
-
-
-
-        @Override
-        public int consumption() {
-            return (int) (paint.consumption()*area());
-        }
-    };
-
-    public Circle(int radius){
+    public Circle(int radius, Paint paint){
+        this.paint = paint;
         this.radius = radius;
     }
 
