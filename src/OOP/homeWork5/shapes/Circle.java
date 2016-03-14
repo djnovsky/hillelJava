@@ -6,6 +6,8 @@ package OOP.homeWork5.shapes;
 public class Circle extends Figure{
     private int radius;
     final double pi = Math.PI;
+    private String color = "red";
+    private double paintConsumption = 1.1;
 
     public Circle(int radius){
         this.radius = radius;
@@ -38,9 +40,25 @@ public class Circle extends Figure{
         return super.toString() + "circle with radius "
                 + getRadius()
                 + " , and I'am "
-                + getColor()+ ". My area is " + area()
+                + color + ". My area is " + area()
                 + " and my circumference is " + perimeter()
-                + ". To paint me you'll need " + consumption(getColor(),area())
+                + ". To paint me you'll need " + (paintConsumption*area())
                 + " litres of paint.";
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPaintConsumption() {
+        return paintConsumption;
+    }
+
+    public void setPaintConsumption(double paintConsumption) {
+        this.paintConsumption = paintConsumption;
     }
 }
