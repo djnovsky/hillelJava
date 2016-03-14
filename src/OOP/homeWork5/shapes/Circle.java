@@ -13,14 +13,12 @@ public class Circle extends Figure{
 
     @Override
     public double area() {
-        double areaRound = Math.round(pi * (Math.pow(radius, 2)));
-        return areaRound;
+        return Math.round(pi * (Math.pow(radius, 2)));
     }
 
     @Override
     public double perimeter() {
-        double perimeterRound = Math.round(2 * pi * radius);
-        return perimeterRound;
+        return Math.round(2 * pi * radius);
     }
 
     public double diameter() {
