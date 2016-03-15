@@ -3,7 +3,7 @@ package OOP;
 /**
  * Created by User on 26.02.2016.
  */
-public class Cat {
+public class Cat implements Comparable {
 
     private String color;
     private String name;
@@ -24,9 +24,9 @@ public class Cat {
         //System.out.println("cat is created");
     }
 
-        public void meow() {
-            System.out.println("meow!!!");
-        }
+    public void meow() {
+        System.out.println("meow!!!");
+    }
 
 
 //    public void init(String name, String color, int birthYear){
@@ -38,27 +38,39 @@ public class Cat {
 //    }
 
 
-
     public void vaccinate(String vaccine) {
         vaccines[vaccineCount] = vaccine;
         vaccineCount++;
         meow();
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getColor(){
+    public String getColor() {
         return color;
     }
 
-    public int getBirthYear(){
+    public int getBirthYear() {
         return birthYear;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        Cat other = (Cat) o;
+        if (birthYear > other.birthYear) {
+            return -1;
+        } else if (birthYear > other.birthYear) {
+            return 1;
+        }
+        return 0;
+
+
+
+    }
 }
