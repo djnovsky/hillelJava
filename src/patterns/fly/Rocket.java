@@ -6,6 +6,7 @@ package patterns.fly;
 public class Rocket implements FlyBeheviour {
     @Override
     public void fly() {
-        System.out.println("I'm flying on the Rocket!...");
+        System.out.println("Somebody gave me a Rocket");
+        System.out.println("Now I'm flying on the Rocket!...");
     }
 }
