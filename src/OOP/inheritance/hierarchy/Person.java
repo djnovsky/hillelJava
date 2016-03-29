@@ -44,6 +44,11 @@ public class Person {
     }
 
     @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
+
+    @Override
     public String toString(){
         return "I'm person. My name is " + getName();
     }
