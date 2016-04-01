@@ -5,12 +5,13 @@ import java.util.Random;
 /**
  * Created by User on 29.03.2016.
  */
-public class ForecastDisplay {
+public class ForecastDisplay implements Observer{
     private int temperature;
     private int humidity;
     private int pressure;
     Random random = new Random();
 
+    @Override
     public void update(int temperature, int humidity, int pressure){
         this.temperature = randomize(temperature);
         this.humidity = randomize(humidity);
@@ -18,7 +19,7 @@ public class ForecastDisplay {
     }
 
     public void display(){
-        System.out.println("Tomorrow temperature: " + temperature + ", humidity: " + humidity + ", pressure: " + pressure);
+        System.out.println("Forecast temperature: " + temperature + ", humidity: " + humidity + ", pressure: " + pressure);
     }
 
     private int randomize(int value) {
