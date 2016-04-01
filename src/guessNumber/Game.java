@@ -8,6 +8,8 @@ public class Game {
         ComputerSecretKeeper secretKeeper = new ComputerSecretKeeper(0, 100);
         ComputerSecretBreaker secretBreaker = new ComputerSecretBreaker(0, 100);
         new GameKeeper().startGame(secretKeeper, secretBreaker);
+
+       // new GameKeeper().startGame(new HumanSecretKeeper(0, 100),new HumanSecretBreaker(0, 100));
     }
 
 }
