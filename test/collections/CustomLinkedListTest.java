@@ -1,5 +1,6 @@
 package collections;
 
+import exceptions.MyOwnOutOfIndexException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,12 +24,26 @@ public class CustomLinkedListTest {
     }
 
     @Test
-    public void getShouldReturnApproriateElement(){
+    public void getShouldReturnAppropriateElement(){
         CustomLinkedList list = new CustomLinkedList();
         Object element = new Object();
         list.add(element);
+        //list.add(element);
+
+
 
         Assert.assertEquals(element, list.get(0));
+        //Assert.assertEquals(element, list.get(1));
+
+
+
+        try {
+            list.get(1);
+            Assert.fail();
+
+        } catch (MyOwnOutOfIndexException e){
+            System.out.println(e);
+        }
 
 
 

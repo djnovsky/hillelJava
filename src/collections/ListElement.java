@@ -1,5 +1,7 @@
 package collections;
 
+import exceptions.MyOwnOutOfIndexException;
+
 /**
  * Created by User on 22.03.2016.
  */
@@ -24,6 +26,9 @@ public class ListElement {
         if (index==0){
             return value;
         } else{
+            if (next == null) {
+                throw new MyOwnOutOfIndexException("ListElementGet Exception");
+            }
             return next.get(index - 1);
         }
     }

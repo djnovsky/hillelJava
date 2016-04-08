@@ -1,5 +1,6 @@
 package collections;
 
+import exceptions.MyOwnOutOfIndexException;
 import patterns.iterator.CustomLinkedListIterator;
 
 import java.util.Iterator;
@@ -7,7 +8,7 @@ import java.util.Iterator;
 /**
  * Created by User on 22.03.2016.
  */
-public class CustomLinkedList implements Iterable{
+public class CustomLinkedList implements Iterable {
 
     private ListElement next;
 
@@ -30,17 +31,21 @@ public class CustomLinkedList implements Iterable{
 
     public Object get(int index) {
         if (next == null) {
-            return null;
+            //return null;
+            throw new MyOwnOutOfIndexException("size= " + size() + " index= " + index);
         } else {
-            if (next == null){
-                return null;
+            try {
+                return next.get(index);
+            } catch (MyOwnOutOfIndexException e) {
+                throw new MyOwnOutOfIndexException("size= " + size() + " index= " + index);
             }
-            return next.get(index);
+
         }
 
     }
 
-    public Iterator iterator(){
+
+    public Iterator iterator() {
         return new CustomLinkedListIterator(next);
     }
 }
