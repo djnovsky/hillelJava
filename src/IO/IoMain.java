@@ -1,9 +1,15 @@
 package IO;
 
+import OOP.inheritance.hierarchy.Person;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Properties;
 
 /**
  * Created by User on 15.04.2016.
@@ -11,10 +17,73 @@ import java.nio.file.Paths;
 public class IoMain {
     public static void main(String[] args) {
 
-        dataWriter();
 
-        dataReader();
+        try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("myFolder/car.dat",true))) {
+            Car myCar = new Car("BMW",1985, new Person("Ivan"));
+            myCar.setRentor(new Rentor("Nikolai"));
+            outputStream.writeObject(myCar);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+
+        try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("myFolder/car.dat"))) {
+            Car myCar = (Car) objectInputStream.readObject();
+            System.out.println(myCar.toString());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static void propertiesExample() {
+        Properties properties = new Properties();
+        try (FileInputStream fileInputStream = new FileInputStream("myFolder/settings.properties")) {
+            properties.load(fileInputStream);
+            String db = properties.getProperty("DB");
+            String password = properties.getProperty("password");
+            int timeout = Integer.parseInt(properties.getProperty("timeout"));
+
+            System.out.println(db + " " + password + " " + timeout);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void objectsExample() {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("myFolder/primitives.dat"))) {
+            int[] date = new int[]{15, 4, 2016};
+
+            outputStream.writeObject(date);
+            outputStream.writeObject("hello");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("myFolder/primitives.dat"))) {
+            int[] date = (int[]) inputStream.readObject();
+            System.out.println(Arrays.toString(date));
+            String someStr = (String) inputStream.readObject();
+            System.out.println(Objects.toString(someStr));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void dataWriter() {
