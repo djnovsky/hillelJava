@@ -7,22 +7,24 @@ import java.io.Serializable;
 /**
  * Created by User on 19.04.2016.
  */
-public class Car implements Serializable{
+public class Car implements Serializable {
+    private static final long serialVersionUID = 1;
     private final int year;
     private final String brand;
     private final Person owner;
-    private transient Rentor rentor;
+    private transient Tenant tenant;
 
 
     public Car(String brand, int year, Person owner) {
-        this.brand=brand;
+        System.out.println("in car constructor");
+        this.brand = brand;
         this.year = year;
         this.owner = owner;
 
     }
 
-    public void setRentor(Rentor rentor) {
-        this.rentor = rentor;
+    public void setTenant(Tenant tenant) {
+        this.tenant = tenant;
     }
 
     @Override
@@ -31,7 +33,7 @@ public class Car implements Serializable{
                 "year=" + year +
                 ", brand='" + brand + '\'' +
                 ", owner=" + owner +
-                ", rentor=" + rentor +
+                ", tenant=" + tenant +
                 '}';
     }
 }

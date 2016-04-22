@@ -6,8 +6,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -18,28 +18,41 @@ public class IoMain {
     public static void main(String[] args) {
 
 
-        try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("myFolder/car.dat",true))) {
-            Car myCar = new Car("BMW",1985, new Person("Ivan"));
-            myCar.setRentor(new Rentor("Nikolai"));
-            outputStream.writeObject(myCar);
+       /*Person ivan = new Person("Ivan"); //ctrl+alt+v - выделить в новую переменную
+        Car myCar = new Car("BMW", 1985, ivan);
+        ivan.setCar(myCar);
+        myCar.setTenant(new Tenant("Nikolai"));
+
+        carSave(myCar);*/
+
+
+
+
+        Car deserializedCar = carLoad();
+
+        System.out.println(deserializedCar.toString() + "\n" + LocalDateTime.now());
+        //System.out.println(deserializedCar == myCar);
+
+
+    }
+
+    public static void carSave(Car car) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("myFolder/car.dat"/*,true*/))) {
+            outputStream.writeObject(car);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+    }
 
-        try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("myFolder/car.dat"))) {
-            Car myCar = (Car) objectInputStream.readObject();
-            System.out.println(myCar.toString());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+    public static Car carLoad() {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("myFolder/car.dat"))) {
+            return (Car) objectInputStream.readObject();
+        } catch (ClassNotFoundException | IOException e) {
+            throw new RuntimeException(e.getCause()); //оборачивания Checked Exception в UncheckedException
         }
-
     }
 
     private static void propertiesExample() {
