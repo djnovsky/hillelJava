@@ -14,7 +14,7 @@ public class Person implements Serializable{
 
     @Deprecated
     public Person(){
-        System.out.println("in default person constructor");
+        //System.out.println("in default person constructor");
     }
 
     /***
@@ -22,7 +22,7 @@ public class Person implements Serializable{
      * @param name - person's name
      */
     public Person(String name){
-        System.out.println("in person constructor with 1 parameter");
+        //System.out.println("in person constructor with 1 parameter");
         this.name = name;
     }
 
