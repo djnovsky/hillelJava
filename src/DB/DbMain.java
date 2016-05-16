@@ -10,8 +10,29 @@ import java.util.Map;
  * Created by User on 16.05.2016.
  */
 public class DbMain {
+
+    /***
+     *
+     *Create Table product (id integer PRIMARY KEY, name varchar(20), category varchar(20), price integer)
+
+     Select * from product
+
+     truncate product
+
+     Insert into product
+     values (1, 'Elephant', 'African animal', 1000000)
+
+     Insert into product
+     values
+     (1, 'Elephant', 'African animal', 1000000),
+     (2, 'Ostrich', 'Australian bird', 20000),
+     (3, 'Lion', 'African animal', 500000),
+     (4, 'Hipo', 'African animal', 85000);
+     */
+
     private Connection connection;
 
+    
     public DbMain(Connection connection) {
         this.connection = connection;
     }
