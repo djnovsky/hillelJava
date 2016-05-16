@@ -31,7 +31,7 @@ public class GenericsMain {
         managers.add(new Manager());
         Manager manager1 = managers.get(0);
 
-        employee = manager;
+        //employee = manager;
         //employees = managers;
 
         employees.add(manager);
@@ -49,6 +49,12 @@ public class GenericsMain {
 
         Map<Person, String> personStringMap = new HashMap<>();
         personStringMap.put(manager, first);
+
+        Employee singleEmployee = new Employee("Petya");
+
+        fire(Collections.singletonList(singleEmployee));//list одного Employee
+
+        fire(Collections.<Employee>emptyList());//пустой лист
 
         copy(employees, new ArrayList<>());
 
