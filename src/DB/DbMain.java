@@ -12,27 +12,26 @@ import java.util.Map;
 public class DbMain {
 
     /***
-     *
-     *Create Table product (id integer PRIMARY KEY, name varchar(20), category varchar(20), price integer)
-
-     Select * from product
-
-     truncate product
-
-     Insert into product
-     values (1, 'Elephant', 'African animal', 1000000)
-
-     Insert into product
-     values
-     (1, 'Elephant', 'African animal', 1000000),
-     (2, 'Ostrich', 'Australian bird', 20000),
-     (3, 'Lion', 'African animal', 500000),
-     (4, 'Hipo', 'African animal', 85000);
+     * Create Table product (id integer PRIMARY KEY, name varchar(20), category varchar(20), price integer)
+     * <p>
+     * Select * from product
+     * <p>
+     * truncate product
+     * <p>
+     * Insert into product
+     * values (1, 'Elephant', 'African animal', 1000000)
+     * <p>
+     * Insert into product
+     * values
+     * (1, 'Elephant', 'African animal', 1000000),
+     * (2, 'Ostrich', 'Australian bird', 20000),
+     * (3, 'Lion', 'African animal', 500000),
+     * (4, 'Hipo', 'African animal', 85000);
      */
 
     private Connection connection;
 
-    
+
     public DbMain(Connection connection) {
         this.connection = connection;
     }
@@ -99,7 +98,51 @@ public class DbMain {
         return result;
     }
 
-    public static void main(String[] args) throws SQLException {
+    public void updatePriceByName(String name, int price) throws Exception {
+        //Statement statement = connection.createStatement();
+        String sql = "UPDATE product SET price = ? WHERE name = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, price);
+        statement.setString(2, name);
+        int rowsUpdated = statement.executeUpdate();
+        System.out.println("Updated " + rowsUpdated + " rows");
+        statement.close();
+    }
+
+    public void createProduct(Product product) throws Exception {
+        String sql = "INSERT INTO product (id, name, category, price)" +
+                " VALUES (?, ?, ?, ?)";
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, product.getId());
+        statement.setString(2, product.getName());
+        statement.setString(3, product.getCategory());
+        statement.setInt(4, product.getPrice());
+
+        int rowsInserted = statement.executeUpdate();
+        if (rowsInserted != 0) {
+            System.out.println("Row inserted");
+        } else {
+            System.out.println("WARNING! Row wasn't inserted");
+        }
+        statement.close();
+    }
+
+    public void deleteProduct(int id) throws Exception {
+        String sql = "DELETE FROM product WHERE id=?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, id);
+        int rowsDeleted = statement.executeUpdate();
+
+        System.out.println("Rows Deleted: " + rowsDeleted);
+
+        statement.close();
+
+    }
+    //CRUD Create, Read, Update, Delete
+
+    public static void main(String[] args) throws Exception {
         System.setProperty("jdbc.drivers", "org.postgresql.Driver");
 
 
@@ -114,6 +157,13 @@ public class DbMain {
         System.out.println(main.findNameAndPrice());
         System.out.println(main.findAllProducts());
         System.out.println(main.findById(3));
+
+        main.updatePriceByName("' OR ''='", 9_999_999);
+        main.updatePriceByName("' OR true --", 9_999_999);
+
+        main.deleteProduct(5);
+
+        //main.createProduct(new Product(5, "Giraffe", "African Animal", 47000));
 
         connection.close();
 
