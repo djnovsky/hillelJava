@@ -1,6 +1,11 @@
 package patterns.factory.factory;
 
+import enums.PizzaType;
 import patterns.factory.pizza.Pizza;
+import patterns.factory.pizza.ingredients.cheese.Mozarella;
+import patterns.factory.pizza.ingredients.cheese.Parmejano;
+import patterns.factory.pizza.ingredients.dough.Thin;
+import patterns.factory.pizza.ingredients.proteins.Meat;
 import patterns.factory.pizza.newYorkCheesePizza;
 import patterns.factory.pizza.newYorkMeatPizza;
 
@@ -8,13 +13,22 @@ import patterns.factory.pizza.newYorkMeatPizza;
  * Created by User on 30.05.2016.
  */
 public class NyPizzaFactory implements PizzaFactory {
+    PizzaComponentsFactory pizzaComponentsFactory;
+
+    public NyPizzaFactory(PizzaComponentsFactory pizzaComponentsFactory) {
+        this.pizzaComponentsFactory = pizzaComponentsFactory;
+    }
+
     @Override
-    public Pizza createPizza(String type) {
+    public Pizza createPizza(PizzaType type) {
+        Pizza pizza;
         switch (type) {
-            case "Cheese":
-                return new newYorkCheesePizza();
-            case "Meat":
-                return new newYorkMeatPizza();
+            case CHEESE:
+                pizza = new newYorkCheesePizza(pizzaComponentsFactory);
+                return pizza;
+            case MEAT:
+                pizza = new newYorkMeatPizza(pizzaComponentsFactory);
+                return pizza;
             default:
                 throw new RuntimeException("Unexpected pizza type: " + type
                         + ". Expected Meat or Cheese.");

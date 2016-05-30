@@ -1,18 +1,19 @@
 package patterns.factory;
 
-import patterns.factory.factory.ChPizzaFactory;
-import patterns.factory.factory.NyPizzaFactory;
+import enums.PizzaType;
+import patterns.factory.factory.*;
 
 /**
  * Created by User on 30.05.2016.
  */
 public class PizzaMain {
     public static void main(String[] args) {
-        PizzaStore nyPizzaStore = new PizzaStore(new NyPizzaFactory());
-        nyPizzaStore.order("Cheese");
-
+        PizzaComponentsFactory nyComponentFactory = new NyPizzaComponentsFactory();        }
+        PizzaStore nyPizzaStore = new PizzaStore(new NyPizzaFactory(NyPizzaComponentsFactory));
+        nyPizzaStore.order(PizzaType.CHEESE);
+    PizzaComponentsFactory chComponentFactory = new ChPizzaComponentsFactory();
         PizzaStore chPizzaStore = new PizzaStore(new ChPizzaFactory());
-        chPizzaStore.order("Cheese");
+        chPizzaStore.order(PizzaType.CHEESE);
 
 
     }
