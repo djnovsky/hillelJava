@@ -1,4 +1,4 @@
-package patterns.factory;
+package patterns.factory.pizza;
 
 /**
  * Created by User on 30.05.2016.
