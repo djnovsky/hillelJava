@@ -1,6 +1,5 @@
 package patterns.factory.factory;
 
-import patterns.factory.factory.PizzaComponentsFactory;
 import patterns.factory.pizza.ingredients.cheese.Cheese;
 import patterns.factory.pizza.ingredients.cheese.Mozarella;
 import patterns.factory.pizza.ingredients.dough.Dough;

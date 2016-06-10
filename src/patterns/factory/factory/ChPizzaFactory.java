@@ -14,6 +14,10 @@ import patterns.factory.pizza.ingredients.proteins.Meat;
 public class ChPizzaFactory implements PizzaFactory {
     PizzaComponentsFactory pizzaComponentsFactory;
 
+    public ChPizzaFactory(PizzaComponentsFactory pizzaComponentsFactory) {
+        this.pizzaComponentsFactory = pizzaComponentsFactory;
+    }
+
     @Override
     public Pizza createPizza(PizzaType type) {
         Pizza pizza;

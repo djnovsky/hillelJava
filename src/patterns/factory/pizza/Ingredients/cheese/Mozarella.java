@@ -1,7 +1,7 @@
 package patterns.factory.pizza.ingredients.cheese;
 
 /**
- * Created by User on 30.05.2016.
+ * Created by Novsky on 08.06.2016.
  */
 public class Mozarella extends Cheese {
 }

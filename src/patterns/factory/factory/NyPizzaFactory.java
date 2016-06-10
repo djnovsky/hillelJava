@@ -2,10 +2,6 @@ package patterns.factory.factory;
 
 import enums.PizzaType;
 import patterns.factory.pizza.Pizza;
-import patterns.factory.pizza.ingredients.cheese.Mozarella;
-import patterns.factory.pizza.ingredients.cheese.Parmejano;
-import patterns.factory.pizza.ingredients.dough.Thin;
-import patterns.factory.pizza.ingredients.proteins.Meat;
 import patterns.factory.pizza.newYorkCheesePizza;
 import patterns.factory.pizza.newYorkMeatPizza;
 
