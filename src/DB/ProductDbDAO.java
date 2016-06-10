@@ -4,16 +4,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
- * Created by User on 23.05.2016.
+ * Created by Novsky on 08.06.2016.
  */
 public class ProductDbDAO implements DAO<Product> {
     private Connection connection;
 
-
     public ProductDbDAO() {
         System.setProperty("jdbc.drivers", "org.postgresql.Driver");
-
 
         try {
             connection = DriverManager.getConnection(
@@ -24,7 +23,6 @@ public class ProductDbDAO implements DAO<Product> {
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public boolean create(Product product) {
@@ -38,19 +36,15 @@ public class ProductDbDAO implements DAO<Product> {
             statement.setString(3, product.getCategory());
             statement.setInt(4, product.getPrice());
 
-
             int rowsInserted = statement.executeUpdate();
-
 
             statement.close();
             return rowsInserted == 1;
-
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public List<Product> findAll() {
@@ -94,40 +88,33 @@ public class ProductDbDAO implements DAO<Product> {
             resultSet.close();
             statement.close();
             return result;
-        } catch (SQLException e) {
+        }catch (SQLException e){
             throw new RuntimeException(e);
         }
     }
 
-
     @Override
     public void update(Product product) {
-
 
         try {
             String sql =
                     "UPDATE product SET price = ?, name = ?, category = ? " +
                             " WHERE id = ? ";
 
-
             PreparedStatement statement = connection.prepareStatement(sql);
-
 
             statement.setInt(1, product.getPrice());
             statement.setString(2, product.getName());
             statement.setString(3, product.getCategory());
             statement.setInt(4, product.getId());
 
-
             statement.executeUpdate();
-
 
             statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public void delete(Product product) {
@@ -137,9 +124,7 @@ public class ProductDbDAO implements DAO<Product> {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, product.getId());
 
-
             int rowsDeleted = statement.executeUpdate();
-
 
             System.out.println("Rows deleted: " + rowsDeleted);
             statement.close();
