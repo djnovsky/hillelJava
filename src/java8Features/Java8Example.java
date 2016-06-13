@@ -25,8 +25,14 @@ public class Java8Example {
         apples.add(new Apple(100, "Green", 11));
         apples.add(new Apple(250, "Yellow", 15));
 
-        /*Optional.empty().get();
-        System.out.println("get on empty optional completed");*/
+
+
+
+    }
+
+    private static void optionalHouse() {
+    /*Optional.empty().get();
+    System.out.println("get on empty optional completed");*/
 
         Optional<String> someString = generate();
 
@@ -44,8 +50,6 @@ public class Java8Example {
                 house.getFlat().
                         flatMap(Flat::getCitizen).
                         flatMap(Citizen::getPassport);
-
-
     }
 
     static Optional<String> generate() {
